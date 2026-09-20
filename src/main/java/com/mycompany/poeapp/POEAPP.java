@@ -54,6 +54,7 @@ public class POEAPP {
             +"characters in length"
             );
         }
+        
         //check password
         if (user.checkpasswordcomplexity()){
            System.out.println("password successfully captured.");
@@ -64,6 +65,40 @@ public class POEAPP {
             +"a number, and a special character."
             );
         }
+        //check cellphone number
+        
+        if (user.checkcellphoneNumber()){
+            System.out.println("cellphone Number successfully added.");
+        }else{
+            System.out.println("cellphone number is incorrectly formatted try again");
+        }
+       //
+       if (user.checkUserName()
+          && user.checkPasswordComplexity()
+       && user.checkCellPhoneNumber())
+       {
+               System.out.println();
+       System.out.println(user.registeruser());
+       System.out.println();
+       System.out.println("============================================");
+       System.out.println(" Login");
+       System.out.println("==============================================");
+       
+       //ask user to enter login username
+       System.out.println("enter username to login");
+        String loginusername = input.nextLine();
+        
+        System.out.println("enter your password :");
+        String loginpassword = input.nextLine();
+        
+        boolean loginsuccessful = user.loginuser(loginusername,loginpassword);
+        
+        System.out.println("user has been registered successfully.");
+       }else{ 
+            System.out.println("registration was unsuccessful");
+            }
+          
+        input.close();
     }
     
 }
