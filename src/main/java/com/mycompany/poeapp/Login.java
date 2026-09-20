@@ -14,6 +14,8 @@ public class Login {
     private String username;
     private String password;
     private String cellphoneNumber;
+    private boolean hasSpecialCharacter;
+    private boolean hasCapitalLetter;
     
     
 
@@ -34,7 +36,28 @@ public class Login {
     }
 
     boolean checkpasswordcomplexity() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (password == null|| password.length()<8){
+            return false;
+        }
+        boolean hascapitalletters =false;
+        boolean hasNumber = false;
+        boolean hasspeciallcharacter = false;
+        for (int i = 0;i < password.length();i++){
+            char character = password.charAt(i);
+            
+            if (Character.isUpperCase(character)){
+                boolean hascapitalletter = true;
+            }
+            if (Character.isDigit(character)){
+                hasNumber= true;
+            }
+            if(!Character.isLetterOrDigit(character)){
+                boolean hasSecialCharacter = true;
+            }
+        }
+        return hasCapitalLetter && hasNumber &&hasSpecialCharacter;
+                
+  
     }
 
     public boolean checkcellphoneNumber() {
@@ -43,8 +66,7 @@ public class Login {
             return false;
             
         }
-        
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return cellPhoneNumber.matches();
     }
 
     public boolean checkuserName() {
@@ -69,6 +91,44 @@ public class Login {
 
     public boolean checkpasswordcomlexity() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    String registeruser() {
+        if (!checkusername()){
+     return "username is not correctly formatted;please ensure that your username contains an under score and is no more than five characters";
+      }
+       
+        if (!checkpasswordcomplexity()){
+            return "password does not meet the complexity requirement";
+        }
+       
+        
+        
+        if (!checkcellphoneNumber()){
+        return "cellphone number is incorrectly formatted try again";
+    }
+        return "user has been registered successfully.";
+    }
+    
+  
+
+   public boolean loginuser(String loginusername, String loginpassword) {
+      
+        
+        if (username == null|| password == null){
+            return false;
+        }
+        return username.equals(loginusername)
+        && password.equals(loginpassword);
+    }
+
+    public String returnLoginstatus(boolean loginsuccessful){
+    if (loginsuccessful){
+        return "welcome"+ firstName+","+ lastName+ "it is great to see you again.";
+        }else{
+        return "username or password incorrect, please try again";
+    }
+        
     }
     
 }
