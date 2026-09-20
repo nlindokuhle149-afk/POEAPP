@@ -9,69 +9,66 @@ package com.mycompany.poeapp;
  * @author Student
  */
 public class Login {
-     private String firstName;
+    private String firstName;
     private String lastName;
-    private String userName;
+    private String username;
     private String password;
-    private String cellPhoneNumber;
-   
-    //consructor 
-    public Login(){
+    private String cellphoneNumber;
+    
+    
+
+    public Login(String firstName, String lastName, String username, String password, String cellphoneNumber) {
+   this.firstName = firstName;
+   this.lastName = lastName;
+   this.username = username;
+   this.password = password;
+   this.cellphoneNumber = cellphoneNumber;
+     
     }
     
-    //constuctor used to store registration details 
-    public Login(String firstName,String lastName,String userName,String password,
-            String cellPhoneNumber){
+   public boolean checkusername() {
+       return username != null
+               && username.contains("_")
+               && username.length()<=5;
         
-    this.firstName = firstName;
-    this.lastName = lastName;
-     this.userName = userName;
-     this.password = password;
-    this.cellPhoneNumber = cellPhoneNumber;        
     }
-    //----------------------------------------------------------------------
-    // checkuserName()
-    //-----------------------------------------------------------------------
-    public boolean checkuserName(){
-        /*
-        * user must   
-        *
-        */
-        
-        return userName != null
-                && userName.contains("_")
-                && userName.length()<=5;
+
+    boolean checkpasswordcomplexity() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    //----------------------------------------------------------------------
-    //check password
-    //-----------------------------------------------------------------------
-    public boolean checkPasswordComplexity(){
-        /* PASSSWORD must:
-        * 1.be at least 8 characters long
-        * 2.contain a capital letter
-        * 3.contain a number
-        * 4. contain a special character
-        */
-        if (password == null || password.length()<8){
+
+    public boolean checkcellphoneNumber() {
+        Object cellphoneNumber = null;
+        if (cellphoneNumber == null){
+            return false;
             
         }
-        boolean hascapitalLetter = false;
-         boolean hasNumber = false;
-        boolean   hasspecialcharacter = false;
         
-        for(int i = 0;i <password.length();i++){
-            char Character = password.charAt(i);
-            
-       if (Character.isUpperCase(character)){
-           hascapitalLetter= true;
-       }if (Character.isDigit(character)){
-           hasNumber = true;
-       }if (!Character.isLetterorDigit(character)){
-           hasspecialcharacter = true;
-       }
-        }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean checkuserName() {
+        return username != null
+               && username.contains("_")
+               && username.length()<=5;
+        
+        
+    }
+
+    public boolean checkPasswordComplexity() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean checkCellPhoneNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean checkpassword() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public boolean checkpasswordcomlexity() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
-       
-                
-            
-                    
+}
