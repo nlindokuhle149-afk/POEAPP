@@ -128,7 +128,26 @@ public class Login {
         }else{
         return "username or password incorrect, please try again";
     }
-        
+    } 
+    /**
+     *
+     * @return
+     */
+    
+        public String firstName(){
+          return firstName;  
+        }
+        public String getlastName(){
+            return lastName;
+}
+        public String getusername(){
+       return username;
+        }
+        public String getpassword(){
+            return username;
     }
+        public String getcellphoneNumber(){
+            return cellphoneNumber;
+        }
     
 }
