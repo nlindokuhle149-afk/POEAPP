@@ -66,7 +66,7 @@ public class Login {
             return false;
             
         }
-        return cellPhoneNumber.matches();
+        return cellphoneNumber();
     }
 
     public boolean checkuserName() {
@@ -149,5 +149,9 @@ public class Login {
         public String getcellphoneNumber(){
             return cellphoneNumber;
         }
+
+    private boolean cellphoneNumber() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
