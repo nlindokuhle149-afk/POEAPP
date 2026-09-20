@@ -61,12 +61,20 @@ public class Login {
     }
 
     public boolean checkcellphoneNumber() {
-        Object cellphoneNumber = null;
-        if (cellphoneNumber == null){
+        
+        if (cellphoneNumber == null || !cellphoneNumber.startsWith("+27")){
             return false;
-            
+             }
+        String numberPart = cellphoneNumber.substring(3);
+        if(numberPart.isEmpty()|| numberPart.length()>10){
+            return false;
         }
-        return cellphoneNumber();
+        for(int i = 0;i<numberPart.length();i++){
+            if (!Character.isDigit(numberPart.charAt(i))){
+                return false;
+            }
+        }
+      return true;  
     }
 
     public boolean checkuserName() {
@@ -153,5 +161,26 @@ public class Login {
     private boolean cellphoneNumber() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
+    public boolean checkPasswordcomplexity() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object registerUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public Object RegisterUser() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
+    
+
+   
+   
+
+    
+   
     
 }
