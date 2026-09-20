@@ -73,7 +73,7 @@ public class POEAPP {
             System.out.println("cellphone number is incorrectly formatted try again");
         }
        //
-       if (user.checkUserName()
+       if (user.checkuserName()
           && user.checkPasswordComplexity()
        && user.checkCellPhoneNumber())
        {
